@@ -17,7 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 public slots:
-    void recibirDatos(QString operador,QString emp,QString tel,QString vehiculo);//,QString &color,QString &tipVehi,QString &ingreso,QString &modelo,QString &empresa,QString &telefono,QString &salida);
+    void recibirDatos(QString operador,QString emp,QString vehiculo,QString marca,QString color,QString patente,QString telefono,QString modelo);
 
 private slots:
     // Declaración de funciones (slots)
