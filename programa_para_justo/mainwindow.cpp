@@ -34,18 +34,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::recibirDatos(QString operador, QString emp, QString tel, QString vehiculo)
-{
 
-    QString auxOpe = operador;QString auxEmp = emp;QString auxTel = tel;QString auxVehi = vehiculo;
-    ui->textoo->setText(auxOpe);
-    ui->textoe->setText(emp);
-    ui->textotelefono->setText(auxTel);
-    ui->textot->setText(auxVehi);
-    ui->textokm->setText("XX");
-    ui->textoi->setText("XX/XX/XXXX");
-    ui->textos->setText("XX/XX/XXXX");
-}
 
 
 ///Prueba de signals
@@ -59,7 +48,7 @@ void MainWindow::on_guardar_clicked()
     std::ofstream archi;
     archivo.open("operador.txt");
     if(archivo.fail()){
-        QMessageBox::warning(this,"Error","Error al abrir el archivo");
+        qDebug() << "ERROR";
     }
     else{
         while(std::getline(archivo,extractor[aux])){
@@ -100,7 +89,46 @@ void MainWindow::on_guardar_clicked()
         archi<<aux<<" "<<palabra<<std::endl;
     }
     archi.close();
-
+    //GUARDAR PATENTEN
+    archi.open("patente.txt");
+    Qpalabra = ui->textop->text();
+    palabra = Qpalabra.toStdString();
+    if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
+    else{
+        //ignorar el espacio a sacar el dato
+        archi<<aux<<" "<<palabra<<std::endl;
+    }
+    archi.close();
+    //guardar km
+    archi.open("kilometros.txt");
+    Qpalabra = ui->textokm->text();
+    palabra = Qpalabra.toStdString();
+    if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
+    else{
+        //ignorar el espacio a sacar el dato
+        archi<<aux<<" "<<palabra<<std::endl;
+    }
+    archi.close();
+    //gaurdar modelo
+    archi.open("modelo.txt");
+    Qpalabra = ui->textomodelo->text();
+    palabra = Qpalabra.toStdString();
+    if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
+    else{
+        //ignorar el espacio a sacar el dato
+        archi<<aux<<" "<<palabra<<std::endl;
+    }
+    archi.close();
+    //gaurdar color
+    archi.open("colorvehiculo.txt");
+    Qpalabra = ui->textoc->text();
+    palabra = Qpalabra.toStdString();
+    if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
+    else{
+        //ignorar el espacio a sacar el dato
+        archi<<aux<<" "<<palabra<<std::endl;
+    }
+    archi.close();
     //guardar vehiculo
     archi.open("vehiculo.txt", std::ios::app);
     Qpalabra=ui->textot->text();
@@ -111,7 +139,15 @@ void MainWindow::on_guardar_clicked()
         archi<<aux<<" "<<palabra<<std::endl;
     }
     archi.close();
-
+    //guardar marca
+    archi.open("marca.txt",std::ios::app);
+    Qpalabra = ui->textom->text();
+    palabra = Qpalabra.toStdString();
+    if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
+    else{
+        archi<<aux<<" "<<palabra<<std::endl;
+    }
+    archi.close();
     //guardar ingreso-salida
     archi.open("ingreso-salida.txt", std::ios::app);
     //crea el string para guardar en el archivo
@@ -140,7 +176,29 @@ void MainWindow::on_guardar_clicked()
     archi.close();
 }
 
+void MainWindow::recibirDatos(QString operador, QString emp,QString vehiculo,QString marca,QString color,QString patente,QString telefono,QString modelo)
+{
 
+    QString auxOpe = operador;
+    QString auxModelo = modelo;
+    QString auxTel = telefono;
+    QString auxEmp = emp;
+    QString auxVehi = vehiculo;
+    QString auxMarca = marca;
+    QString auxColor = color;
+    QString auxPatente = patente;
+    ui->textoo->setText(auxOpe);
+    ui->textoc->setText(auxColor);
+    ui->textoe->setText(emp);
+    ui->textom->setText(auxMarca);
+    ui->textotelefono->setText(auxTel);
+    ui->textop->setText(auxPatente);
+    ui->textot->setText(auxVehi);
+    ui->textomodelo->setText(auxModelo);
+    ui->textokm->setText("XX");
+    ui->textoi->setText("XX/XX/XXXX");
+    ui->textos->setText("XX/XX/XXXX");
+}
 
 void MainWindow::on_imprimir_clicked()
 {
@@ -283,19 +341,15 @@ void MainWindow::on_bbuscar_clicked()
 {
     Dialog *ventana = new Dialog(this);
 
-    //QObject::connect(&a, &Dialog::enviarDatos,&b,&MainWindow::recibirDatos);
-    connect(ventana, SIGNAL(enviarDatos(QString,QString,QString,QString)), this, SLOT(recibirDatos(QString,QString,QString,QString)));
+
+    connect(ventana, SIGNAL(enviarDatos(QString,QString,QString,QString,QString,QString,QString,QString)), this, SLOT(recibirDatos(QString,QString,QString,QString,QString,QString,QString,QString)));
     ventana->exec();
 
 
     delete ventana;
 }
 
-
-
 void MainWindow::on_btrazabilidad_clicked()
 {
 
 }
-
-
