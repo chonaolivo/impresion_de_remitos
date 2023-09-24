@@ -16,7 +16,7 @@ public:
     ~Dialog();
     //QStringList obtenerIndice();
 signals:
-    void enviarDatos(QString operador,QString emp,QString tel,QString vehiculo);//,QString,QString,QString,QString,QString,QString,QString);
+    void enviarDatos(QString operador,QString emp,QString vehiculo,QString marca,QString color,QString patente,QString telefono,QString modelo);
 
 public slots:
     void on_seleccionarOpera_clicked();
