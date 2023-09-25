@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="loperador">
+          <property name="text">
+           <string>OPERADOR</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lmarca">
+          <property name="text">
+           <string>MARCA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lkm">
+          <property name="text">
+           <string>KM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>PATENTE</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>COLOR</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="ltipo">
+          <property name="text">
+           <string>TIPO DE VEHICULO</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLineEdit" name="textoo"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textom"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textokm"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textop"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textoc"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textot"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="lingreso">
+          <property name="text">
+           <string>INGRESO</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lmodelo">
+          <property name="text">
+           <string>MODELO</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lempresa">
+          <property name="text">
+           <string>EMPRESA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="ltelefono">
+          <property name="text">
+           <string>TELEFONO</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lsalida">
+          <property name="text">
+           <string>SALIDA</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLineEdit" name="textoi"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textomodelo"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textoe"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textotelefono"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="textos"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="bbuscar">
+      <property name="text">
+       <string>Buscar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="btrazabilidad">
+      <property name="text">
+       <string>Trazabilidad</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPlainTextEdit" name="comentario"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>148</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>228</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="guardar">
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="imprimir">
+      <property name="text">
+       <string>Imprimir</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
