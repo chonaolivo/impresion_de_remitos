@@ -91,7 +91,7 @@ void MainWindow::on_guardar_clicked()
     }
     archi.close();
     //GUARDAR PATENTEN
-    archi.open("patente.txt");
+    archi.open("patente.txt",std::ios::app);
     Qpalabra = ui->textop->text();
     palabra = Qpalabra.toStdString();
     if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
@@ -101,7 +101,7 @@ void MainWindow::on_guardar_clicked()
     }
     archi.close();
     //guardar km
-    archi.open("kilometros.txt");
+    archi.open("kilometros.txt",std::ios::app);
     Qpalabra = ui->textokm->text();
     palabra = Qpalabra.toStdString();
     if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
@@ -111,7 +111,7 @@ void MainWindow::on_guardar_clicked()
     }
     archi.close();
     //gaurdar modelo
-    archi.open("modelo.txt");
+    archi.open("modelo.txt",std::ios:app);
     Qpalabra = ui->textomodelo->text();
     palabra = Qpalabra.toStdString();
     if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
@@ -121,7 +121,7 @@ void MainWindow::on_guardar_clicked()
     }
     archi.close();
     //gaurdar color
-    archi.open("colorvehiculo.txt");
+    archi.open("colorvehiculo.txt",std::ios::app);
     Qpalabra = ui->textoc->text();
     palabra = Qpalabra.toStdString();
     if(archi.fail())QMessageBox::warning(this,"Error","Error al abrir el archivo");
